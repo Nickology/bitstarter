@@ -1,3 +1,4 @@
+
 var express = require('express');
 
 var app = express.createServer(express.logger());
@@ -5,6 +6,7 @@ var app = express.createServer(express.logger());
 app.get('/', function(request, response) {
     // response.send('Hello World 2!');
 
+	var fs = IMPORTS.require('fs')
 	var buffer = new Buffer(fs.readFileSync("index.html"));
 	response.send(buffer.toString());
 });
